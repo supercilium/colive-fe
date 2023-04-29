@@ -1,0 +1,27 @@
+.container {
+  min-height: 100%;
+}
+
+.sidenav {
+  padding: 40px 10px;
+  min-width: 10rem;
+}
+
+.filters {
+  list-style-type: none;
+  margin-top: 4px;
+  padding: 0;
+}
+
+.content {
+  padding: 40px;
+}
+
+.task-owner {
+  color: beige;
+  margin-right: 32px;
+}
+
+.task-description {
+  justify-content: space-between;
+}

@@ -1,0 +1,80 @@
+<mat-sidenav-container class="container">
+  <mat-sidenav class="sidenav" mode="side" opened>
+    <h3 class="mat-headline-6">Filters</h3>
+    <ul class="filters">
+      <li>
+        <mat-checkbox class="margin">By deadline</mat-checkbox>
+      </li>
+      <li>
+        <mat-checkbox class="margin">By description</mat-checkbox>
+      </li>
+      <li>
+        <mat-checkbox class="margin">By owner</mat-checkbox>
+      </li>
+      <li>
+        <mat-checkbox class="margin">Is expense</mat-checkbox>
+      </li>
+      <li>
+        <mat-checkbox class="margin">By status</mat-checkbox>
+      </li>
+    </ul>
+  </mat-sidenav>
+  <mat-sidenav-content class="content">
+    <h3 class="mat-headline-5">Link to flat</h3>
+
+    <div class="example-action-buttons">
+      <button mat-button (click)="accordion.openAll()">Expand All</button>
+      <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+    </div>
+
+    <mat-accordion class="example-headers-align" multi>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <span class="mat-caption task-owner">Sasha</span>
+            Wash dishes
+          </mat-panel-title>
+          <mat-panel-description class="task-description">
+            DeadLine: 01.05.2023
+            <mat-chip-option selected color="accent"> Done </mat-chip-option>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>Task description</p>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel disabled>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <span class="mat-caption task-owner">Sasha</span>
+            Re-invent the wheel
+          </mat-panel-title>
+          <mat-panel-description class="task-description">
+            DeadLine: 01.05.2023
+            <mat-chip-option highlighted color="primary"> New </mat-chip-option>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>Task description</p>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <span class="mat-caption task-owner">Sasha</span>
+            Create new tasks with loooooong loooooong long title
+          </mat-panel-title>
+          <mat-panel-description class="task-description">
+            DeadLine: 01.05.2023
+            <mat-chip-option> Status </mat-chip-option>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>Task description</p>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-sidenav-content>
+</mat-sidenav-container>
