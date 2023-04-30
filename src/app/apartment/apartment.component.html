@@ -1,0 +1,41 @@
+<div class="content">
+  <br />
+  <form class="form" novalidate>
+    <h3 class="mat-headline-6">
+      {{ hasFlat ? "Your flat" : "Creating a flat" }}
+    </h3>
+    <mat-form-field color="accent" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Name of your flat" />
+    </mat-form-field>
+    <mat-form-field color="accent" appearance="fill">
+      <mat-label>Address</mat-label>
+      <input matInput placeholder="Address of your flan" />
+    </mat-form-field>
+    <mat-form-field color="accent" appearance="fill">
+      <mat-label>Choose a date of rent payment</mat-label>
+      <input matInput [matDatepicker]="picker" />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field color="accent" appearance="fill">
+      <mat-label>Rent</mat-label>
+      <input matInput placeholder="Enter your rent payment" />
+    </mat-form-field>
+
+    <p>
+      <button
+        type="button"
+        mat-raised-button
+        color="primary"
+        (click)="hasFlat = !hasFlat"
+      >
+        {{ hasFlat ? "Edit" : "Add" }}
+      </button>
+    </p>
+  </form>
+</div>
