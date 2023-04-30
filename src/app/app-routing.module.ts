@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'flat', component: ApartmentComponent },
+  { path: '', component: ApartmentComponent },
 ];
 
 @NgModule({
