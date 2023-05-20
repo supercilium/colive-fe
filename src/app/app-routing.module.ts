@@ -5,7 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'flat', component: ApartmentComponent },
+  { path: 'flat/:id', component: ApartmentComponent },
   { path: '', component: ApartmentComponent },
 ];
 

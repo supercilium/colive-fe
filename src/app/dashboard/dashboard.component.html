@@ -21,7 +21,9 @@
   </mat-sidenav>
   <mat-sidenav-content class="content">
     <h3 class="mat-headline-5">
-      <a mat-flat-button color="accent" routerLink="/flat">Link to flat</a>
+      <a mat-flat-button color="accent" [routerLink]="['/flat', apartment.id]"
+        >Link to flat</a
+      >
     </h3>
 
     <div class="example-action-buttons">
@@ -30,50 +32,24 @@
     </div>
 
     <mat-accordion class="example-headers-align" multi>
-      <mat-expansion-panel>
+      <mat-expansion-panel *ngFor="let task of apartment.tasks">
         <mat-expansion-panel-header>
           <mat-panel-title>
-            <span class="mat-caption task-owner">Sasha</span>
-            Wash dishes
+            <span class="mat-caption task-owner">{{ task.assignee_name }}</span>
+            {{ task.name }}
           </mat-panel-title>
           <mat-panel-description class="task-description">
-            DeadLine: 01.05.2023
-            <mat-chip-option selected color="accent"> Done </mat-chip-option>
+            DeadLine: {{ task.deadline | date }}
+            <mat-chip-option
+              [selected]="task.status === 'Done'"
+              [highlighted]="task.status !== 'Canceled'"
+              [color]="statusColors[task.status]"
+            >
+              {{ task.status }}
+            </mat-chip-option>
           </mat-panel-description>
         </mat-expansion-panel-header>
-        <p>Task description</p>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
-      </mat-expansion-panel>
-
-      <mat-expansion-panel disabled>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            <span class="mat-caption task-owner">Sasha</span>
-            Re-invent the wheel
-          </mat-panel-title>
-          <mat-panel-description class="task-description">
-            DeadLine: 01.05.2023
-            <mat-chip-option highlighted color="primary"> New </mat-chip-option>
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <p>Task description</p>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
-      </mat-expansion-panel>
-
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            <span class="mat-caption task-owner">Sasha</span>
-            Create new tasks with loooooong loooooong long title
-          </mat-panel-title>
-          <mat-panel-description class="task-description">
-            DeadLine: 01.05.2023
-            <mat-chip-option> Status </mat-chip-option>
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <p>Task description</p>
+        <p *ngIf="task.description">Task description</p>
         <button mat-button>LIKE</button>
         <button mat-button>SHARE</button>
       </mat-expansion-panel>
